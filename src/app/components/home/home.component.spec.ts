@@ -4,6 +4,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 import { WholePokemon } from 'src/app/models/pokemon';
 import { of } from 'rxjs';
+import { AddPokemonComponent } from '../add-pokemon/add-pokemon.component';
+import { EditPokemonComponent } from '../edit-pokemon/edit-pokemon.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -33,15 +36,22 @@ describe('HomeComponent', () => {
   ];
 
   const mockPokemonService = {
-    getPokemons: () => of(pokemons)
+    getPokemons: () => of(pokemons),
+    deletePokemon: (id: number) => of()
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FormsModule, 
+        ReactiveFormsModule
       ],
-      declarations: [ HomeComponent ],
+      declarations: [ 
+        HomeComponent,
+        AddPokemonComponent,
+        EditPokemonComponent
+      ],
       providers:[
         { provide: PokemonsService, useValue: mockPokemonService }
       ]
@@ -58,12 +68,21 @@ describe('HomeComponent', () => {
   });
 
   it('should get pokemons', () => {
-    const getPokemonsSpy = spyOn((component as any).pokemonsService, 'getPokemons')
+    const getPokemonsSpy = spyOn(mockPokemonService, 'getPokemons')
       .and.returnValue(of(pokemons));
     
     component.ngOnInit();
 
     expect(getPokemonsSpy).toHaveBeenCalled();
     expect(pokemons.length).toBe(2);
+  });
+
+  it('should delete pokemon', () => {
+    const deletePokemonSpy = spyOn(mockPokemonService, 'deletePokemon')
+      .and.returnValue(of());
+    
+    component.deletePokemon(1000);
+
+    expect(deletePokemonSpy).toHaveBeenCalled();
   });
 });

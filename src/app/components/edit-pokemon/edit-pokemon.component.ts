@@ -34,14 +34,14 @@ export class EditPokemonComponent implements OnInit {
    if (this.editPokemonForm.invalid) return;
 
    const pokemon: WholePokemon = {
-      id: this.pokemon.id,
+      id: this.pokemon?.id,
       name: this.editPokemonForm.get('name')?.value,
       image: this.editPokemonForm.get('image')?.value,
       attack: this.editPokemonForm.get('attack')?.value,
       defense: this.editPokemonForm.get('defense')?.value,
-      hp: this.pokemon.hp,
-      type: this.pokemon.type,
-      idAuthor: this.pokemon.idAuthor
+      hp: this.pokemon?.hp,
+      type: this.pokemon?.type,
+      idAuthor: this.pokemon?.idAuthor
    };
 
    this.pokemonService.editPokemon(pokemon).subscribe({

@@ -10,6 +10,10 @@ describe('AddPokemonComponent', () => {
   let component: AddPokemonComponent;
   let fixture: ComponentFixture<AddPokemonComponent>;
 
+  const mockPokemonService = {
+    addPokemon: (pokemon: Pokemon) => of()
+  };
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -17,7 +21,10 @@ describe('AddPokemonComponent', () => {
         FormsModule, 
         ReactiveFormsModule
       ],
-      declarations: [ AddPokemonComponent ]
+      declarations: [ AddPokemonComponent ],
+      providers: [
+        { provide: PokemonsService, useValue: mockPokemonService }
+      ]
     })
     .compileComponents();
 
@@ -28,5 +35,19 @@ describe('AddPokemonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add pokemon', () => {
+    const addPokemonSpy = spyOn(mockPokemonService, 'addPokemon')
+      .and.returnValue(of());
+
+    component.newPokemonForm.get('name')?.setValue('My Pokemon');
+    component.newPokemonForm.get('image')?.setValue('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/088.png');
+    component.newPokemonForm.get('attack')?.setValue(70);
+    component.newPokemonForm.get('defense')?.setValue(40);
+    
+    component.addPokemon();
+
+    expect(addPokemonSpy).toHaveBeenCalled();
   });
 });
