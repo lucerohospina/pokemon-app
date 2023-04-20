@@ -1,0 +1,59 @@
+.header {
+  background-color: #D3D3D3;
+  height: 3rem;
+}
+
+.header__icon {
+  color: #A0A0A0;
+  font-size: 16px;
+  left: 10px;
+  position: relative;
+  top: 16px;
+}
+
+.home {
+  padding: 0 32px 32px;
+}
+
+.home__actions {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home__input-search__icon-container {
+  height: 32px;
+  position: relative;
+  top: 4px;
+}
+
+.home__input-search__input {
+  height: 32px;
+}
+
+.home__button {
+  background-color: #3457D5;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.home__button__icon {
+  position: relative;
+  top: 5px;
+}
+
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}

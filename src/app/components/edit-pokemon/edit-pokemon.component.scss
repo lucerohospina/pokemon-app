@@ -1,0 +1,27 @@
+.pokemon-details__container {
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  margin-top: 2rem;
+}
+
+.pokemon-details__title {
+  text-align: center;
+}
+
+.form__actions {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.form__save-button,
+.form__cancel-button {
+  background-color: #3457D5;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  color: #fff;
+}
+
+.form__cancel-button {
+  margin-left: 1rem;
+}
