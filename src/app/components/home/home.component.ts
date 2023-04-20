@@ -34,9 +34,6 @@ export class HomeComponent implements OnInit {
         if (this.showEditPoKemonCard) {
           this.showEditPoKemonCard = false;
         }
-      },
-      error: (error) => {
-        console.log(error);
       }
     });
   }

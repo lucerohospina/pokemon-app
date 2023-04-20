@@ -1,18 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AddPokemonComponent } from './add-pokemon.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PokemonsService } from 'src/app/services/pokemons.service';
+import { Pokemon } from 'src/app/models/pokemon';
+import { of } from 'rxjs';
 
-import { PokemonnDetailsComponent } from './add-pokemon.component';
-
-describe('PokemonnDetailsComponent', () => {
-  let component: PokemonnDetailsComponent;
-  let fixture: ComponentFixture<PokemonnDetailsComponent>;
+describe('AddPokemonComponent', () => {
+  let component: AddPokemonComponent;
+  let fixture: ComponentFixture<AddPokemonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokemonnDetailsComponent ]
+      imports: [
+        HttpClientTestingModule,
+        FormsModule, 
+        ReactiveFormsModule
+      ],
+      declarations: [ AddPokemonComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PokemonnDetailsComponent);
+    fixture = TestBed.createComponent(AddPokemonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

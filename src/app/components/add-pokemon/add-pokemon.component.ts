@@ -18,10 +18,10 @@ export class AddPokemonComponent implements OnInit {
               private pokemonService: PokemonsService) {}
 
   ngOnInit(): void {
-      this.createNewActivityForm();
+      this.createNewPokemonForm();
   }
 
-  createNewActivityForm() {
+  createNewPokemonForm() {
     this.newPokemonForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       attack: [0, [Validators.required]],
