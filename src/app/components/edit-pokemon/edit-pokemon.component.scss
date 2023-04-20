@@ -1,6 +1,7 @@
 .pokemon-details__container {
   background-color: #fff;
   border: 1px solid #dddddd;
+  padding: 32px;
   margin-top: 2rem;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .form__actions {
-  margin: 2rem auto;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -19,9 +20,23 @@
   border: none;
   border-radius: 8px;
   color: #fff;
-  color: #fff;
+  font-size: 16px;
+  padding-bottom: 8px;
+  width: 9rem;
 }
 
 .form__cancel-button {
-  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.form__button-icon {
+  position: relative;
+  top: 6px;
+}
+
+@media (min-width: 576px) { 
+  .form__cancel-button {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
 }

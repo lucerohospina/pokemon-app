@@ -3,38 +3,53 @@
   <form [formGroup]="editPokemonForm">
     <div class="row">
       <div class="column">
-        <label>Nombre: </label>
-        <input type="text" formControlName="name">
+        <div>
+          <label>Nombre: </label>
+          <input type="text" formControlName="name">
+        </div>
       </div>
-      
       <div class="column">
-        <label>Ataque</label>
-        <div class="slidecontainer">
-          <span>0</span>
-          <input type="range" min="1" max="100" value="0" formControlName="attack">
-          <span>100</span>
+        <div>
+          <label>Ataque: </label>
+          <span class="slidecontainer">
+            <span>0</span>
+            <input type="range" min="1" max="100" value="0" formControlName="attack">
+            <span>100</span>
+          </span>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="column">
-        <label>Imagen</label>
-        <input type="text" formControlName="image">
+        <div>
+          <label>Imagen: </label>
+          <input type="text" formControlName="image">
+        </div>
       </div>
-      
       <div class="column">
-        <label>Defensa</label>
-        <div class="slidecontainer">
-          <span>0</span>
-          <input type="range" min="1" max="100" value="0" formControlName="defense">
-          <span>100</span>
+        <div>
+          <label>Defensa: </label>
+          <span class="slidecontainer">
+            <span>0</span>
+            <input type="range" min="1" max="100" value="0" formControlName="defense">
+            <span>100</span>
+          </span>
         </div>
       </div>
     </div>
-
     <div class="form__actions">
-      <button class="form__save-button pointer" (click)="editPokemon()">Guardar</button>
-      <button class="form__cancel-button pointer" (click)="cancel()">Cancelar</button>
+      <button class="form__save-button pointer" (click)="editPokemon()">
+        <i class="material-icons form__button-icon">
+          save
+        </i>
+        Guardar
+      </button>
+      <button class="form__cancel-button pointer" (click)="cancel()">
+        <i class="material-icons form__button-icon">
+          close
+        </i>
+        Cancelar
+      </button>
     </div>
   </form>
 </div>

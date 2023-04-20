@@ -1,16 +1,5 @@
-<nav class="header">
-  <i class="material-icons header__icon">
-    circle
-  </i>
-  <i class="material-icons header__icon">
-    circle
-  </i>
-  <i class="material-icons header__icon">
-    circle
-  </i>
-</nav>
 <div class="home">
-  <h4>Listado de Pokemon</h4>
+  <h3>Listado de Pokemon</h3>
   <div class="home__actions">
     <div class="home__input-search">
       <button type="submit" class="home__input-search__icon-container">
@@ -36,21 +25,22 @@
       </tr>
       <tr *ngFor="let pokemon of pokemons">
         <td>{{ pokemon.name }}</td>
-        <td><img src="{{ pokemon.image }}" height="100" width="100" alt="pokemon-image"></td>
+        <td class="text-center">
+          <img src="{{ pokemon.image }}" height="80" width="80" alt="pokemon-image">
+        </td>
         <td>{{ pokemon.attack }}</td>
         <td>{{ pokemon.defense }}</td>
-        <td>
+        <td class="text-center">
           <i class="material-icons pointer" (click)="editPokemon(pokemon)">
             edit
           </i>
-          <i class="material-icons pointer" (click)="deletePokemon(pokemon.id)">
+          <i class="material-icons pointer ml-1" (click)="deletePokemon(pokemon.id)">
             delete
           </i>
         </td>
       </tr>
     </table>
   </div>
-
   <app-add-pokemon 
     *ngIf="showPokemonDetailsCard"
     (refreshPokemons)="getPokemons()"

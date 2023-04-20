@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddPokemonComponent,
-    EditPokemonComponent
+    EditPokemonComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
